@@ -1,0 +1,34 @@
+my backlog
+before running ./csand.sh boombox
+
+ modify the file csand.sh
+change (two entries) in csand.sh
+tar -zxf boombox.tar.gz
+
+with
+
+unzip boombox.tar.gz
+
+run the command ./csand.sh boombox
+
+the script will download the box but fail when configuring and intstalling the VM
+
+
+Modify the file : ./Packer/sandbox.json:
+ change 
+--vrde-port
+
+with 
+--vrdeport
+
+
+and change true by on in the section:
+
+       [
+          "modifyvm",
+          "{{.Name}}",
+          "--vrde",
+          "true"   ]   
+
+to continue without downloadind the box again, run the script build.sh from boombox directory
+                                                                                                                                                                           ]
